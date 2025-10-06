@@ -194,4 +194,51 @@ h2::after {
   text-decoration: none;
 }
 
-#c
+#contact-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 12px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+}
+
+#contact-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+#contact-form button {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#contact-form button:hover {
+  background: transparent;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #333;
+  color: #999;
+  font-size: 0.9rem;
+}
