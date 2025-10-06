@@ -239,10 +239,29 @@ h2::after {
   font-weight: 600;
   transition: 0.3s ease;
 }
-#contact-links a:hover {
-  color: #FFD700; /* brighter gold on hover */
-  transform: scale(1.2);
+.icon-btn {
+  color: gold;
+  font-size: 38px;
+  background-color: transparent;
+  border: 2px solid gold;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
+
+.icon-btn:hover {
+  transform: scale(1.2);
+  color: black;
+  background-color: gold;
+  box-shadow: 0 0 20px gold, 0 0 40px gold;
+}
+
 .contact-form button:hover {
   background: #ffcc00;
   transform: scale(1.05);
