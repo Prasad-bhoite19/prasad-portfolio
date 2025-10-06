@@ -1,47 +1,209 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
-  line-height: 1.6;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
   margin: 0;
   padding: 0;
-}
-header {
-  background: #0077b6;
-  color: white;
-  text-align: center;
-  padding: 2rem 0;
-}
-section {
-  padding: 1.5rem 2rem;
-  background: white;
-  margin: 1rem auto;
-  width: 80%;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-h1, h2 {
-  color: #023e8a;
-}
-a {
-  color: #0077b6;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #023e8a;
-  color: white;
-}
-.profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  margin-bottom: 1rem;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #3f37c9, #4361ee);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-bottom: 20px;
+  object-fit: cover;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.hero h3 {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 15px auto 25px;
+  font-size: 1rem;
+  color: #e9e9e9;
+}
+
+.btn {
+  background-color: #ffea00;
+  color: #333;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #3f37c9;
+}
+
+/* Skills */
+.skills-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #edf2ff;
+}
+
+.skills-section h2 {
+  color: #3f37c9;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skills-container span {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.skills-container span:hover {
+  background: #3f37c9;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Projects */
+.projects-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.projects-section h2 {
+  color: #3f37c9;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+  color: #3f37c9;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.btn-small {
+  color: #3f37c9;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.btn-small:hover {
+  border-bottom: 2px solid #3f37c9;
+}
+
+/* Contact */
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #edf2ff;
+}
+
+.contact-section h2 {
+  color: #3f37c9;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.contact-details {
+  margin-top: 20px;
+}
+
+.contact-details p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.contact-details a {
+  color: #3f37c9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #3f37c9;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 0.9rem; }
+  .skills-container span { padding: 8px 14px; }
+}
