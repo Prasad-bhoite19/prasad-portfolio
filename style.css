@@ -190,58 +190,75 @@ h2::after {
 }
 
 /* ===== Contact Section ===== */
-.contact-info {
+/* Contact Section Styling */
+.contact-section {
   text-align: center;
-  margin-bottom: 30px;
+  padding: 80px 20px;
+  background: #0b0b0b;
+  color: #fff;
 }
 
-.contact-info p {
-  color: #ccc;
-  margin: 10px 0;
-}
-
-.contact-info a {
-  color: #ffd700;
-  text-decoration: none;
-}
-
-#contact-form {
-  max-width: 600px;
-  margin: auto;
+/* Contact Form Styling */
+.contact-form {
+  max-width: 500px;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-#contact-form input,
-#contact-form textarea {
-  padding: 12px;
-  border: 1px solid #333;
+/* Input and Textarea Styling */
+.contact-form input,
+.contact-form textarea {
   background: #111;
-  color: #fff;
+  border: 1px solid #d4af37;
   border-radius: 8px;
-}
-
-#contact-form textarea {
-  resize: none;
-  height: 120px;
-}
-
-#contact-form button {
-  background: #ffd700;
-  color: #000;
-  border: none;
   padding: 12px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s ease;
 }
 
-#contact-form button:hover {
-  background: transparent;
-  border: 2px solid #ffd700;
-  color: #ffd700;
+/* Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ffcc00;
+  outline: none;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Button Styling */
+.contact-form button {
+  background: #d4af37;
+  color: #000;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
+}
+
+/* Note Text Styling */
+.note {
+  margin-top: 10px;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Success Message Styling */
+#successMessage {
+  display: none; /* Hidden by default */
+  margin-top: 15px;
+  color: #d4af37; /* Gold color */
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* ===== Footer ===== */
