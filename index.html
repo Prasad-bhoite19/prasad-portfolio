@@ -97,13 +97,32 @@
       <i class="fas fa-envelope"></i>
     </a>
 
-   <!-- LinkedIn -->
-    <a href="linkedin://in/prasad-bhoite"
-      onclick="window.location='www.linkedin.com/in/prasad-bhoite-a38a64223;"
-         class="icon-btn" title="LinkedIn">
-       <i class="fab fa-linkedin"></i>
-    </a>
+   <!-- LINKEDIN ICON (SMART + APP FALLBACK) -->
+<a href="https://linkedin.com/in/prasad-bhoite-a38a64223"
+   onclick="
+   const appLink = 'linkedin://in/prasad-bhoite-a38a64223';
+   const webLink = 'https://linkedin.com/in/prasad-bhoite-a38a64223';
+   let opened = false;
 
+   // Try to open LinkedIn app
+   window.location = appLink;
+
+   // If app not installed, open browser after 1 second
+   setTimeout(() => {
+     if (!opened) {
+       window.open(webLink, '_blank');
+     }
+   }, 1000);
+
+   // Detect if app successfully opened
+   window.onblur = () => { opened = true; };
+
+   return false;
+   "
+   class="icon-btn"
+   title="Connect on LinkedIn">
+  <i class="fab fa-linkedin"></i>
+</a>
 
     <!-- GitHub -->
     <a href="https://github.com/Prasad-Bhoite19" target="_blank" class="icon-btn" title="GitHub">
