@@ -1,40 +1,37 @@
-// ===== Typing Effect for Tagline =====
-const text = "Cloud & DevOps Engineer | AWS | Linux | Docker | Python";
-let index = 0;
-const speed = 100; // typing speed in ms
-
-function typeWriter() {
-  if (index < text.length) {
-    document.getElementById("tagline").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, speed);
-  }
+/* ===== Skill Section Styling ===== */
+.skills {
+  padding: 60px 20px;
+  background-color: #000; /* Black background */
+  color: gold; /* Gold text */
 }
 
-window.onload = () => {
-  typeWriter();
-};
+.skill {
+  margin: 20px 0;
+}
 
-// ===== Skill Bar Animation on Scroll =====
-const skillBars = document.querySelectorAll(".skill-bar span");
+.skill p {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: gold;
+}
 
-window.addEventListener("scroll", () => {
-  let triggerHeight = window.innerHeight / 1.2;
+/* Skill bar container */
+.skill-bar {
+  width: 100%;
+  background-color: rgba(255, 215, 0, 0.2); /* Transparent gold background */
+  border-radius: 25px;
+  overflow: hidden;
+  height: 25px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
 
-  skillBars.forEach((bar) => {
-    const barTop = bar.getBoundingClientRect().top;
-    if (barTop < triggerHeight) {
-      bar.style.width = bar.getAttribute("data-skill") + "%";
-    }
-  });
-});
-
-// ===== Smooth Scroll for Nav Links =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
+/* Skill bar fill */
+.skill-bar span {
+  display: block;
+  height: 100%;
+  width: 0; /* initial width */
+  background: linear-gradient(90deg, gold, #ffd700);
+  border-radius: 25px;
+  transition: width 1.5s ease-in-out;
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.7);
+}
