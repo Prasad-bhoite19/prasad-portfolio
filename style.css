@@ -236,6 +236,15 @@ html {
 
 /* ===== Contact Section ===== */
 /* Contact Section Styling */
+.icon-btn i {
+  color: #f0f0f0;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icon-btn i:hover {
+  color: #1da1f2; /* or any color you like */
+  transform: scale(1.2);
+}
 .contact-section {
   text-align: center;
   padding: 80px 20px;
