@@ -6,31 +6,86 @@
   <title>Prasad Bhoite | Cloud & DevOps Engineer</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Sticky right-side nav */
+    .side-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 5px;
+      border-radius: 8px 0 0 8px;
+      z-index: 1000;
+    }
+    .side-nav ul { list-style: none; margin: 0; padding: 0; }
+    .side-nav ul li { margin: 10px 0; }
+    .side-nav ul li a {
+      color: gold;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      display: block;
+      transition: all 0.3s;
+    }
+    .side-nav ul li a:hover {
+      background: gold;
+      color: black;
+      border-radius: 5px;
+      transform: scale(1.1);
+    }
+
+    /* Enhanced hero button */
+    .btn-hero {
+      background: linear-gradient(90deg, gold, #ffb700);
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 50px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      color: black;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-hero:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Fade-in animation */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
 <body>
   <!-- ===== Header Section ===== -->
-  <header class="hero">
+  <header class="hero fade-in">
     <div class="overlay"></div>
     <div class="hero-content">
       <img src="myphoto1.jpg" alt="Prasad Bhoite" class="profile-photo">
       <h1>Hello, I'm <span>Prasad Bhoite</span></h1>
       <p class="tagline">Cloud & DevOps Engineer | AWS | Linux | Docker | Python</p>
-      <a href="#contact" class="btn">Hire Me</a>
+      <a href="#contact" class="btn btn-hero">Hire Me</a>
     </div>
   </header>
-<!-- ===== Right Side Vertical Navigation Bar ===== -->
-<nav class="side-nav">
-  <ul>
-    <li><a href="#about">About Me</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">My Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#resume">Resume</a></li>
-    <li><a href="#contact">Connect with Me</a></li>
-  </ul>
-</nav>
-   <!-- ===== About Section ===== -->
-  <section id="about" class="section about">
+
+  <!-- ===== Right Side Vertical Navigation Bar ===== -->
+  <nav class="side-nav">
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">My Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact-links">Connect</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== About Section ===== -->
+  <section id="about" class="section about fade-in">
     <h2>About Me</h2>
     <p>
       I am a passionate Cloud & DevOps Engineer focused on creating scalable, automated, and reliable infrastructures.
@@ -38,152 +93,103 @@
       I am a quick learner, team player, and always eager to explore new technologies.
     </p>
   </section>
-  
-  <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-<!-- ===== Education Section ===== -->
-<section id="education" class="section education" style="text-align: center;">
-  <h2>Education</h2>
-  <p>
-    <strong>Bachelor of Science (B.Sc) in Computer Science</strong><br>
-    Shivaji University, Kolhapur<br>
-    Passing Year: 2025<br>
-    CGPA: 7.5 / 10
-  </p>
-</section>
+  <!-- ===== Education Section ===== -->
+  <section id="education" class="section education fade-in" style="text-align: center;">
+    <h2>Education</h2>
+    <p>
+      <strong>Bachelor of Science (B.Sc) in Computer Science</strong><br>
+      Shivaji University, Kolhapur<br>
+      Passing Year: 2025<br>
+      CGPA: 7.5 / 10
+    </p>
+  </section>
 
-<!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
- 
   <!-- ===== Skills Section ===== -->
-  <section id="skills" class="section skills">
+  <section id="skills" class="section skills fade-in">
     <h2>My Skills</h2>
-    <div class="skill">
-      <p>AWS</p><div class="skill-bar"><span style="width: 90%;"></span></div>
-    </div>
-    <div class="skill">
-      <p>Linux</p><div class="skill-bar"><span style="width: 85%;"></span></div>
-    </div>
-    <div class="skill">
-      <p>Docker</p><div class="skill-bar"><span style="width: 80%;"></span></div>
-    </div>
-    <div class="skill">
-      <p>DevOps & CI/CD</p><div class="skill-bar"><span style="width: 75%;"></span></div>
-    </div>
-    <div class="skill">
-      <p>Python</p><div class="skill-bar"><span style="width: 70%;"></span></div>
-    </div>
+    <div class="skill"><p>AWS</p><div class="skill-bar"><span style="width: 90%;"></span></div></div>
+    <div class="skill"><p>Linux</p><div class="skill-bar"><span style="width: 85%;"></span></div></div>
+    <div class="skill"><p>Docker</p><div class="skill-bar"><span style="width: 80%;"></span></div></div>
+    <div class="skill"><p>DevOps & CI/CD</p><div class="skill-bar"><span style="width: 75%;"></span></div></div>
+    <div class="skill"><p>Python</p><div class="skill-bar"><span style="width: 70%;"></span></div></div>
   </section>
 
   <!-- ===== Projects Section ===== -->
-  <section id="projects" class="section projects">
+  <section id="projects" class="section projects fade-in">
     <h2>Projects</h2>
     <div class="project-container">
-      <div class="project">
-        <h3>Bus Booking App</h3>
-        <p>Flask + MySQL web application for ticket booking and route management.</p>
-      </div>
-      <div class="project">
-        <h3>Cloud Deployment Automation</h3>
-        <p>Created automated EC2 instance deployment using AWS CLI and shell scripting.</p>
-      </div>
-      <div class="project">
-        <h3>CI/CD Pipeline Setup</h3>
-        <p>Built Jenkins pipeline integrating GitHub, Docker, and AWS for continuous delivery.</p>
-      </div>
+      <div class="project"><h3>Bus Booking App</h3><p>Flask + MySQL web application for ticket booking and route management.</p></div>
+      <div class="project"><h3>Cloud Deployment Automation</h3><p>Created automated EC2 instance deployment using AWS CLI and shell scripting.</p></div>
+      <div class="project"><h3>CI/CD Pipeline Setup</h3><p>Built Jenkins pipeline integrating GitHub, Docker, and AWS for continuous delivery.</p></div>
     </div>
   </section>
 
   <!-- ===== Resume Section ===== -->
-  <section id="resume" class="section resume">
+  <section id="resume" class="section resume fade-in">
     <h2>Resume</h2>
     <p>You can view or download my latest resume for detailed experience and education.</p>
     <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
   </section>
 
- <!-- ===== Contact Section ===== -->
-<!-- MODERN CONTACT ICONS SECTION -->
-<section id="contact-links" style="background-color:black; padding:60px 20px; text-align:center; border-radius:20px; margin-top:40px;">
+  <!-- ===== Contact Section ===== -->
+  <section id="contact-links" class="fade-in" style="background-color:black; padding:60px 20px; text-align:center; border-radius:20px; margin-top:40px;">
+    <h2 style="color:gold; font-size:32px; margin-bottom:25px;">✨ Connect with Me</h2>
+    <p style="color:gold; font-size:18px; margin-bottom:40px;">Connect with me instantly:</p>
+    <div class="icons-container" style="display:flex; justify-content:center; gap:35px; flex-wrap:wrap;">
+      <a href="tel:+919359070217" class="icon-btn" title="Call Me"><i class="fas fa-phone"></i></a>
+      <a href="mailto:prasadsb2002@gmail.com" class="icon-btn" title="Email Me"><i class="fas fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/prasad-bhoite-a38a64223" onclick="const appLink='linkedin://in/prasad-bhoite-a38a64223'; const webLink='https://linkedin.com/in/prasad-bhoite-a38a64223'; let opened=false; window.location=appLink; setTimeout(()=>{if(!opened){window.open(webLink,'_blank');}},1000); window.onblur=()=>{opened=true;}; return false;" class="icon-btn" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Prasad-Bhoite19" target="_blank" class="icon-btn" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://prasad-bhoite19.github.io/prasad-portfolio/" target="_blank" class="icon-btn" title="Portfolio"><i class="fas fa-globe"></i></a>
+    </div>
+  </section>
 
-  <h2 style="color:gold; font-size:32px; margin-bottom:25px;">✨ Connect with Me</h2>
-  <p style="color:gold; font-size:18px; margin-bottom:40px;">Tap an icon below to connect instantly!</p>
-
-  <div class="icons-container" style="display:flex; justify-content:center; gap:35px; flex-wrap:wrap;">
-    
-    <!-- Phone -->
-    <a href="tel:+919359070217" class="icon-btn" title="Call Me">
-      <i class="fas fa-phone"></i>
-    </a>
-
-    <!-- Email -->
-    <a href="mailto:prasadsb2002@gmail.com" class="icon-btn" title="Email Me">
-      <i class="fas fa-envelope"></i>
-    </a>
-
-   <!-- LINKEDIN ICON (SMART + APP FALLBACK) -->
-<a href="https://linkedin.com/in/prasad-bhoite-a38a64223"
-   onclick="
-   const appLink = 'linkedin://in/prasad-bhoite-a38a64223';
-   const webLink = 'https://linkedin.com/in/prasad-bhoite-a38a64223';
-   let opened = false;
-
-   // Try to open LinkedIn app
-   window.location = appLink;
-
-   // If app not installed, open browser after 1 second
-   setTimeout(() => {
-     if (!opened) {
-       window.open(webLink, '_blank');
-     }
-   }, 1000);
-
-   // Detect if app successfully opened
-   window.onblur = () => { opened = true; };
-
-   return false;
-   "
-   class="icon-btn"
-   title="Connect on LinkedIn">
-  <i class="fab fa-linkedin"></i>
-</a>
-
-    <!-- GitHub -->
-    <a href="https://github.com/Prasad-Bhoite19" target="_blank" class="icon-btn" title="GitHub">
-      <i class="fab fa-github"></i>
-    </a>
-
-    <!-- Portfolio -->
-    <a href="https://prasad-bhoite19.github.io/prasad-portfolio/" target="_blank" class="icon-btn" title="Portfolio">
-      <i class="fas fa-globe"></i>
-    </a>
-  </div>
-</section>
-
-<section id="contact" class="contact-section">
-  <h2>Contact Me</h2>
-  <p>Have a question or want to work together? Send me a message below 👇</p>
-
-  <div class="form-wrapper">
-    <form id="contactForm" action="https://formspree.io/f/xanpblve" method="POST" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
-    <!-- Success message placeholder -->
-    <p id="successMessage" class="note" style="display:none; color:#d4af37; margin-top:15px;">
-      ✅ Your message has been sent. I’ll get back to you soon!
-    </p>
-  </div>
-</section>
+  <section id="contact" class="contact-section fade-in">
+    <h2>Contact Me</h2>
+    <p>Have a question or want to work together? Send me a message below 👇</p>
+    <div class="form-wrapper">
+      <form id="contactForm" action="https://formspree.io/f/xanpblve" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="successMessage" class="note" style="display:none; color:#d4af37; margin-top:15px;">
+        ✅ Your message has been sent. I’ll get back to you soon!
+      </p>
+    </div>
+  </section>
 
   <!-- ===== Footer ===== -->
   <footer>
     <p>© 2025 Prasad Bhoite. All rights reserved.</p>
   </footer>
 
+  <!-- ===== Scripts ===== -->
+  <script>
+    // Smooth scroll for side-nav links
+    document.querySelectorAll('.side-nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
