@@ -132,18 +132,63 @@
     <a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
   </section>
 
-  <!-- ===== Contact Section ===== -->
-  <section id="contact-links" class="fade-in" style="background-color:black; padding:60px 20px; text-align:center; border-radius:20px; margin-top:40px;">
-    <h2 style="color:gold; font-size:32px; margin-bottom:25px;">✨ Connect with Me</h2>
-    <p style="color:gold; font-size:18px; margin-bottom:40px;">Connect with me instantly:</p>
-    <div class="icons-container" style="display:flex; justify-content:center; gap:35px; flex-wrap:wrap;">
-      <a href="tel:+919359070217" class="icon-btn" title="Call Me"><i class="fas fa-phone"></i></a>
-      <a href="mailto:prasadsb2002@gmail.com" class="icon-btn" title="Email Me"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/prasad-bhoite-a38a64223" onclick="const appLink='linkedin://in/prasad-bhoite-a38a64223'; const webLink='https://linkedin.com/in/prasad-bhoite-a38a64223'; let opened=false; window.location=appLink; setTimeout(()=>{if(!opened){window.open(webLink,'_blank');}},1000); window.onblur=()=>{opened=true;}; return false;" class="icon-btn" title="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/Prasad-Bhoite19" target="_blank" class="icon-btn" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://prasad-bhoite19.github.io/prasad-portfolio/" target="_blank" class="icon-btn" title="Portfolio"><i class="fas fa-globe"></i></a>
-    </div>
-  </section>
+ <!-- ===== Contact Section ===== -->
+<!-- MODERN CONTACT ICONS SECTION -->
+<section id="contact-links" style="background-color:black; padding:60px 20px; text-align:center; border-radius:20px; margin-top:40px;">
+
+  <h2 style="color:gold; font-size:32px; margin-bottom:25px;">✨ Connect with Me</h2>
+  <p style="color:gold; font-size:18px; margin-bottom:40px;">Tap an icon below to connect instantly!</p>
+
+  <div class="icons-container" style="display:flex; justify-content:center; gap:35px; flex-wrap:wrap;">
+    
+    <!-- Phone -->
+    <a href="tel:+919359070217" class="icon-btn" title="Call Me">
+      <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:prasadsb2002@gmail.com" class="icon-btn" title="Email Me">
+      <i class="fas fa-envelope"></i>
+    </a>
+
+   <!-- LINKEDIN ICON (SMART + APP FALLBACK) -->
+<a href="https://linkedin.com/in/prasad-bhoite-a38a64223"
+   onclick="
+   const appLink = 'linkedin://in/prasad-bhoite-a38a64223';
+   const webLink = 'https://linkedin.com/in/prasad-bhoite-a38a64223';
+   let opened = false;
+
+   // Try to open LinkedIn app
+   window.location = appLink;
+
+   // If app not installed, open browser after 1 second
+   setTimeout(() => {
+     if (!opened) {
+       window.open(webLink, '_blank');
+     }
+   }, 1000);
+
+   // Detect if app successfully opened
+   window.onblur = () => { opened = true; };
+
+   return false;
+   "
+   class="icon-btn"
+   title="Connect on LinkedIn">
+  <i class="fab fa-linkedin"></i>
+</a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/Prasad-Bhoite19" target="_blank" class="icon-btn" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <!-- Portfolio -->
+    <a href="https://prasad-bhoite19.github.io/prasad-portfolio/" target="_blank" class="icon-btn" title="Portfolio">
+      <i class="fas fa-globe"></i>
+    </a>
+  </div>
+</section>
 
   <section id="contact" class="contact-section fade-in">
     <h2>Contact Me</h2>
