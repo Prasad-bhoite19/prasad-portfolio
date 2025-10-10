@@ -29,12 +29,18 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// ===== Smooth Scroll for Nav Links =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
+let prevScrollPos = window.pageYOffset;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollPos > currentScrollPos) {
+    // scrolling up
+    navbar.style.top = "0";
+  } else {
+    // scrolling down
+    navbar.style.top = "-60px";
+  }
+  prevScrollPos = currentScrollPos;
 });
+
