@@ -1,45 +1,80 @@
-// ✅ Contact form submission (Show success message)
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // prevent default form submission
-    const successMessage = document.getElementById('successMessage');
-    if (successMessage) {
-      successMessage.style.display = 'block'; // show success message
-    }
-    this.reset(); // optional: clear form
-  });
-}
+document.addEventListener('DOMContentLoaded', function () {
 
-// ✅ Smooth scroll for top-nav links (Desktop Only)
-document.querySelectorAll('.top-nav a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
+  // 1) Contact Form Submission with Formspree
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
 
-// ✅ Hide navbar on scroll down, show on scroll up (Desktop Only)
-let lastScroll = 0;
-const nav = document.querySelector('.top-nav');
-
-window.addEventListener('scroll', () => {
-  // Only run this effect if navbar is visible (desktop)
-  if (window.innerWidth > 768 && nav) {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll) {
-      // Scrolling down
-      nav.style.top = '-100px';
-    } else {
-      // Scrolling up
-      nav.style.top = '0';
-    }
-
-    lastScroll = currentScroll;
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById('successMessage').style.display = 'block';
+          this.reset();
+        } else {
+          alert("Oops! There was a problem submitting your form.");
+        }
+      }).catch(error => {
+        alert("Oops! There was a problem submitting your form.");
+      });
+    });
   }
+
+  // 2) Smooth Scroll for Top-Nav Links
+  const nav = document.querySelector('.top-nav');
+  if (nav) {
+    document.querySelectorAll('.top-nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  // 3) Hide navbar on scroll down, show on scroll up (desktop only)
+  if (nav) {
+    let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+    let ticking = false;
+
+    function handleScroll() {
+      if (window.innerWidth <= 768) {
+        nav.style.top = '';
+        return;
+      }
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScroll + 5) {
+        nav.style.top = '-140px';
+      } else if (currentScroll < lastScroll - 5) {
+        nav.style.top = '0';
+      }
+
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Reset nav position on resize
+    window.addEventListener('resize', function () {
+      if (window.innerWidth <= 768) nav.style.top = '';
+      else nav.style.top = '0';
+    });
+  }
+
 });
