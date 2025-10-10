@@ -76,13 +76,11 @@ h2::after {
   transform: translateY(-2px);
 }
 
-/* ===== Media Query for Mobile ===== */
+/* ===== Hide Navbar on Mobile Only ===== */
 @media (max-width: 768px) {
   .top-nav {
     display: none !important;
   }
 }
 
-/* ===== Other Sections ===== */
-/* Hero, About, Skills, Projects, Resume, Contact, Footer same as previous code */
-/* (Copy previous full style for these sections including icons and form styles) */
+/* ===== Keep all other styles same (Hero, Skills, Projects, Contact Form, Footer) ===== */
