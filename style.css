@@ -34,23 +34,30 @@ h2::after {
   margin: 10px auto;
   border-radius: 5px;
 }
-/* Navbar styling */
+/* Navbar */
 #navbar {
   position: fixed;
   top: 0;
   right: 0;
   width: auto;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 0 0 0 10px;
-  padding: 10px 20px;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  padding: 12px 25px;
   z-index: 9999;
-  transition: top 0.3s, background 0.3s, backdrop-filter 0.3s;
+  transition: top 0.4s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4); /* soft shadow */
+  border-radius: 0 0 0 12px;
 }
 
+/* Smooth shadow on hover */
+#navbar:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Horizontal right-aligned links */
 .nav-links {
   display: flex;
-  gap: 15px;
+  gap: 18px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -60,14 +67,16 @@ h2::after {
   color: gold;
   text-decoration: none;
   font-weight: 500;
-  padding: 5px 10px;
-  transition: color 0.3s, background 0.3s;
-  border-radius: 5px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
+/* Glow hover effect */
 .nav-links li a:hover {
   background: gold;
   color: black;
+  box-shadow: 0 0 10px gold;
 }
 
 /* Hide navbar on mobile */
@@ -76,8 +85,6 @@ h2::after {
     display: none;
   }
 }
-
-
 /* Hover Effect */
 .side-nav a:hover {
   background: #007bff;
