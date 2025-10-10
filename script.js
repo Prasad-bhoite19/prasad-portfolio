@@ -14,4 +14,21 @@ function typeWriter() {
 window.onload = () => {
   typeWriter();
 };
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (scrollTop > lastScrollTop) {
+    // scrolling down
+    navbar.style.top = "-80px"; // hide
+  } else {
+    // scrolling up
+    navbar.style.top = "0"; // show
+  }
+  
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
+});
+
 
