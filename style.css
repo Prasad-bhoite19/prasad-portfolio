@@ -35,33 +35,28 @@ h2::after {
   border-radius: 5px;
 }
 
-/* ===== Top Right Horizontal Navbar ===== */
-.top-nav {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  background-color: transparent; /* keep it transparent */
+/* Container for the nav buttons */
+.navbar {
+  position: fixed;    /* stays in place when scrolling */
+  top: 20px;          /* distance from top */
+  right: 20px;        /* distance from right */
+  display: flex;      /* horizontal layout */
+  gap: 15px;          /* space between buttons */
+  z-index: 1000;      /* above other content */
 }
 
-.top-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px; /* space between links */
-  margin: 0;
-  padding: 0;
-}
-
-.top-nav ul li a {
-  text-decoration: none;
+/* Style for the icons */
+.icon-btn i {
   color: #f0f0f0;
-  font-weight: 500;
-  transition: color 0.3s;
-  font-size: 1rem;
+  transition: transform 0.3s, color 0.3s;
+  cursor: pointer;
+  font-size: 24px;    /* adjust icon size */
 }
 
-.top-nav ul li a:hover {
-  color: #ffd700; /* highlight color */
+/* Hover effect */
+.icon-btn i:hover {
+  color: #1da1f2;      /* color on hover */
+  transform: scale(1.2); /* enlarge on hover */
 }
 
 /* Smooth Scroll */
