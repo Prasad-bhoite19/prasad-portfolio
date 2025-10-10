@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // 1) Contact Form Submission with Formspree
+  // ✅ Contact Form Submission with Formspree
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 2) Smooth Scroll for Top-Nav Links
+  // ✅ Smooth scroll for top-nav links
   const nav = document.querySelector('.top-nav');
   if (nav) {
     document.querySelectorAll('.top-nav a[href^="#"]').forEach(link => {
@@ -39,41 +39,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // 3) Hide navbar on scroll down, show on scroll up (desktop only)
+  // ✅ Hide navbar on scroll down, show on scroll up (desktop only)
   if (nav) {
     let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
-    let ticking = false;
-
-    function handleScroll() {
-      if (window.innerWidth <= 768) {
-        nav.style.top = '';
-        return;
-      }
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScroll > lastScroll + 5) {
-        nav.style.top = '-140px';
-      } else if (currentScroll < lastScroll - 5) {
-        nav.style.top = '0';
-      }
-
-      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
-    }
-
     window.addEventListener('scroll', function () {
-      if (!ticking) {
-        window.requestAnimationFrame(function () {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-
-    // Reset nav position on resize
-    window.addEventListener('resize', function () {
-      if (window.innerWidth <= 768) nav.style.top = '';
-      else nav.style.top = '0';
+      if (window.innerWidth <= 768) return; // mobile: do nothing
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScroll + 5) nav.style.top = '-140px';
+      else if (currentScroll < lastScroll - 5) nav.style.top = '0';
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
     });
   }
 
