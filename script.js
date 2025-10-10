@@ -15,32 +15,28 @@ window.onload = () => {
   typeWriter();
 };
 
-// ===== Skill Bar Animation on Scroll =====
-const skillBars = document.querySelectorAll(".skill-bar span");
-
-window.addEventListener("scroll", () => {
-  let triggerHeight = window.innerHeight / 1.2;
-
-  skillBars.forEach((bar) => {
-    const barTop = bar.getBoundingClientRect().top;
-    if (barTop < triggerHeight) {
-      bar.style.width = bar.getAttribute("data-skill") + "%";
-    }
-  });
-});
-
+// Show/hide navbar on scroll (desktop only)
 let prevScrollPos = window.pageYOffset;
 const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
-  let currentScrollPos = window.pageYOffset;
-  if (prevScrollPos > currentScrollPos) {
-    // scrolling up
-    navbar.style.top = "0";
-  } else {
-    // scrolling down
-    navbar.style.top = "-60px";
+  if (window.innerWidth > 1024) { // only for desktop
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+      navbar.style.top = "0"; // scrolling up → show
+    } else {
+      navbar.style.top = "-60px"; // scrolling down → hide
+    }
+    prevScrollPos = currentScrollPos;
   }
-  prevScrollPos = currentScrollPos;
 });
 
+// Change color to gold on click
+const navButtons = document.querySelectorAll(".nav-btn");
+
+navButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    navButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
