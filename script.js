@@ -1,19 +1,3 @@
-let lastScrollTop = 0;
-const navbar = document.getElementById("navbar");
-
-window.addEventListener("scroll", function() {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
-  if (scrollTop > lastScrollTop) {
-    // scrolling down
-    navbar.style.top = "-80px"; // hide
-  } else {
-    // scrolling up
-    navbar.style.top = "0"; // show
-  }
-  
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
-});
 // ===== Typing Effect for Tagline =====
 const text = "Cloud & DevOps Engineer | AWS | Linux | Docker | Python";
 let index = 0;
@@ -30,3 +14,17 @@ function typeWriter() {
 window.onload = () => {
   typeWriter();
 };
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    navbar.style.top = "-100px"; // hide smoothly
+  } else {
+    navbar.style.top = "0"; // show smoothly
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
