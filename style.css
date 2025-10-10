@@ -34,37 +34,39 @@ h2::after {
   margin: 10px auto;
   border-radius: 5px;
 }
-/* Vertical Side Navigation Bar */
-.side-nav {
+/* ===== Navbar ===== */
+#navbar {
   position: fixed;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background: #ffffff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0b0b0b; /* match your website */
   padding: 10px 0;
-  border-radius: 12px 0 0 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: top 0.3s;
   z-index: 1000;
 }
 
-.side-nav ul {
+.nav-list {
   list-style: none;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  gap: 25px; /* spacing between links */
   margin: 0;
   padding: 0;
 }
 
-.side-nav li {
-  margin: 8px 0;
-}
-
-.side-nav a {
-  display: block;
-  padding: 12px 20px;
-  color: #333;
+.nav-list li a {
+  color: #f0f0f0; /* match your website */
   text-decoration: none;
   font-weight: 500;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  padding: 5px 10px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-list li a:hover {
+  color: #1da1f2; /* hover color */
+  transform: scale(1.1);
 }
 
 /* Hover Effect */
