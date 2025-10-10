@@ -40,15 +40,13 @@ h2::after {
   position: fixed;
   top: 0;
   right: 0;
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
   background: rgba(0,0,0,0.85);
   padding: 12px 20px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
   z-index: 1000;
   transition: top 0.35s ease, opacity 0.35s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
 }
 
 .top-nav ul {
@@ -64,16 +62,14 @@ h2::after {
   color: #ffd700;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s, background 0.2s, transform 0.18s;
+  transition: color 0.2s, background 0.2s;
   padding: 8px 12px;
   border-radius: 8px;
-  font-size: 14px;
 }
 
 .top-nav a:hover {
   color: #fff;
   background: rgba(255,255,255,0.03);
-  transform: translateY(-2px);
 }
 
 /* ===== Hide Navbar on Mobile Only ===== */
