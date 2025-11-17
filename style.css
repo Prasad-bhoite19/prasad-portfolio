@@ -291,6 +291,20 @@ html {
   width: fit-content;
   margin: auto;
 }
+/* ===== Mobile Responsive: Stack Projects and Certifications ===== */
+@media (max-width: 768px) {
+  .projects .project-container,
+  .certifications .cert-list {
+    grid-template-columns: 1fr;       /* Make one column */
+    justify-items: center;            /* Center items horizontally */
+  }
+
+  .project,
+  .cert-item {
+    width: 90%;                       /* Optional: control width on small screens */
+    max-width: 400px;
+  }
+}
 
 /* ===== Contact Section ===== */
 /* Contact Section Styling */
