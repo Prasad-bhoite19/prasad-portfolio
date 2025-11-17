@@ -243,8 +243,8 @@ html {
 .certifications {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers the content horizontally */
-  text-align: center;  /* centers text inside cards */
+  align-items: center;
+  text-align: center;
 }
 
 .certifications .cert-list {
@@ -252,7 +252,7 @@ html {
   grid-template-columns: repeat(2, minmax(250px, 1fr));
   gap: 25px;
   margin-top: 20px;
-  justify-content: center; /* centers the grid */
+  justify-content: center;
 }
 
 .cert-item {
@@ -269,17 +269,16 @@ html {
 }
 
 .cert-item h3 {
-  color: #ffd700;
+  color: #ffd700;  /* gold */
   margin-bottom: 10px;
   font-size: 1.2rem;
 }
 
 .cert-item p {
-  color: #ccc;
+  color: #fff;      /* white */
   font-size: 0.95rem;
-  line-height: 1.8; /* adds space between lines */
+  line-height: 1.8;
 }
-
 /* ===== Resume Section ===== */
 .resume p {
   text-align: center;
