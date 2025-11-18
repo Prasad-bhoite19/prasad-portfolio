@@ -249,8 +249,8 @@ html {
 
 .certifications .cert-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(2, 1fr); /* default 2 boxes per row */
+  gap: 30px 40px; /* vertical 30px, horizontal 40px */
   margin-top: 20px;
   justify-content: center;
 }
@@ -262,6 +262,11 @@ html {
   border: 1px solid #333;
   box-shadow: 0 0 10px rgba(255,215,0,0.2);
   transition: transform 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px; /* uniform height */
 }
 
 .cert-item:hover {
@@ -271,7 +276,7 @@ html {
 .cert-item h3 {
   color: #ffd700;  /* gold */
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* slightly adjusted */
 }
 
 .cert-item p {
@@ -279,13 +284,36 @@ html {
   font-size: 0.95rem;
   line-height: 1.8;
 }
+
 .cert-item h3 a {
-  color: #ffd700;       /* keep gold */
-  text-decoration: none; /* remove underline */
+  color: #ffd700;       /* gold */
+  text-decoration: none;
 }
 
 .cert-item h3 a:hover {
-  color: #ffd700;       /* gold on hover too */
+  color: #ffd700;       /* gold on hover */
+}
+
+/* ===== Responsive Design ===== */
+
+/* Mobile: 1 certificate per row */
+@media screen and (max-width: 768px) {
+  .certifications .cert-list {
+    grid-template-columns: 1fr;
+    gap: 20px; /* smaller gap for mobile */
+  }
+
+  .cert-item {
+    height: auto; /* let box adjust to content on mobile */
+  }
+}
+
+/* Optional: Tablets / small desktops: 2 per row */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .certifications .cert-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
 }
 /* ===== Resume Section ===== */
 .resume p {
