@@ -238,7 +238,6 @@ html {
 .project p {
   color: #ccc;
 }
-
 /* ===== Certifications Section ===== */
 .certifications {
   display: flex;
@@ -249,10 +248,11 @@ html {
 
 .certifications .cert-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* default 2 boxes per row */
-  gap: 30px 40px; /* vertical 30px, horizontal 40px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* auto-fit for responsive columns */
+  gap: 30px; /* space between boxes */
   margin-top: 20px;
-  justify-content: center;
+  width: 100%;
+  max-width: 900px; /* optional, keeps layout centered on large screens */
 }
 
 .cert-item {
@@ -266,7 +266,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 180px; /* uniform height */
+  min-height: 180px; /* uniform minimum height */
 }
 
 .cert-item:hover {
@@ -276,7 +276,7 @@ html {
 .cert-item h3 {
   color: #ffd700;  /* gold */
   margin-bottom: 10px;
-  font-size: 1.1rem; /* slightly adjusted */
+  font-size: 1.1rem;
 }
 
 .cert-item p {
@@ -286,12 +286,12 @@ html {
 }
 
 .cert-item h3 a {
-  color: #ffd700;       /* gold */
+  color: #ffd700;       /* keep gold */
   text-decoration: none;
 }
 
 .cert-item h3 a:hover {
-  color: #ffd700;       /* gold on hover */
+  color: #ffd700;       /* gold on hover too */
 }
 
 /* ===== Responsive Design ===== */
@@ -304,11 +304,11 @@ html {
   }
 
   .cert-item {
-    height: auto; /* let box adjust to content on mobile */
+    min-height: auto; /* allow box to adjust height to content */
   }
 }
 
-/* Optional: Tablets / small desktops: 2 per row */
+/* Optional: Tablets / small desktops */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .certifications .cert-list {
     grid-template-columns: repeat(2, 1fr);
