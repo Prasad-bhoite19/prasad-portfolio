@@ -279,6 +279,14 @@ html {
   font-size: 0.95rem;
   line-height: 1.8;
 }
+.cert-item h3 a {
+  color: #ffd700;       /* keep gold */
+  text-decoration: none; /* remove underline */
+}
+
+.cert-item h3 a:hover {
+  color: #ffd700;       /* gold on hover too */
+}
 /* ===== Resume Section ===== */
 .resume p {
   text-align: center;
