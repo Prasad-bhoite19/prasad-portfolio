@@ -277,7 +277,7 @@ html {
 
 .cert-item h3 {
   color: #ffd700;  /* gold */
-  margin-bottom: 10px;
+  margin-bottom: 0;
   font-size: 1.1rem;
 }
 
@@ -298,6 +298,8 @@ html {
 
 .cert-item {
   cursor: pointer; /* shows pointer on hover */
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* keep text color from parent (gold/white) */
 }
 
 /* ===== Responsive Design ===== */
