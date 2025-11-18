@@ -244,15 +244,17 @@ html {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  padding: 20px; /* optional padding around section */
 }
 
 .certifications .cert-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* auto-fit for responsive columns */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
   gap: 30px; /* space between boxes */
-  margin-top: 20px;
   width: 100%;
-  max-width: 900px; /* optional, keeps layout centered on large screens */
+  max-width: 900px; /* center the grid */
+  margin: 20px auto 0 auto; /* top margin and center horizontally */
 }
 
 .cert-item {
@@ -266,7 +268,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 180px; /* uniform minimum height */
+  height: 180px; /* uniform box height */
 }
 
 .cert-item:hover {
@@ -300,19 +302,11 @@ html {
 @media screen and (max-width: 768px) {
   .certifications .cert-list {
     grid-template-columns: 1fr;
-    gap: 20px; /* smaller gap for mobile */
+    gap: 20px;
   }
 
   .cert-item {
-    min-height: auto; /* allow box to adjust height to content */
-  }
-}
-
-/* Optional: Tablets / small desktops */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .certifications .cert-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    height: auto; /* let box adjust height to content */
   }
 }
 /* ===== Resume Section ===== */
