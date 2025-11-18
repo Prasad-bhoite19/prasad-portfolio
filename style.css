@@ -296,6 +296,10 @@ html {
   color: #ffd700;       /* gold on hover too */
 }
 
+.cert-item {
+  cursor: pointer; /* shows pointer on hover */
+}
+
 /* ===== Responsive Design ===== */
 
 /* Mobile: 1 certificate per row */
