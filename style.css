@@ -253,7 +253,7 @@ html {
   grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
   gap: 30px; /* space between boxes */
   width: 100%;
-  max-width: 900px; /* center the grid */
+  max-width: 700px; /* center the grid */
   margin: 20px auto 0 auto; /* top margin and center horizontally */
 }
 
