@@ -268,7 +268,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 140px; /* uniform box height */
+  height: 100px; /* uniform box height */
 }
 
 .cert-item:hover {
