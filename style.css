@@ -269,6 +269,10 @@ html {
   flex-direction: column;
   justify-content: space-between;
   height: 130px; /* uniform box height */
+
+  cursor: pointer; /* shows pointer on hover */
+  text-decoration: none; /* remove underline */
+  color: inherit;        /* keep text color from parent */
 }
 
 .cert-item:hover {
@@ -285,21 +289,19 @@ html {
   color: #fff;      /* white */
   font-size: 0.95rem;
   line-height: 1.8;
+  text-decoration: none; /* remove underline from p */
 }
 
-.cert-item h3 a {
-  color: #ffd700;       /* keep gold */
-  text-decoration: none;
-}
-
-.cert-item h3 a:hover {
-  color: #ffd700;       /* gold on hover too */
-}
-
-.cert-item {
-  cursor: pointer; /* shows pointer on hover */
+/* Remove underline for any link inside h3 or p */
+.cert-item h3 a,
+.cert-item p a {
+  color: inherit;       /* inherit color */
   text-decoration: none; /* remove underline */
-  color: inherit;        /* keep text color from parent (gold/white) */
+}
+
+.cert-item h3 a:hover,
+.cert-item p a:hover {
+  color: inherit;       /* keep color on hover */
 }
 
 /* ===== Responsive Design ===== */
